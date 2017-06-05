@@ -1,0 +1,61 @@
+/*
+* @Author: Marte
+* @Date:   2017-04-10 19:26:55
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-04-12 15:08:15
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, em, img, strong, b, u, i, dl, dt, dd, ol, ul, li, form, label, table, tbody, thead, tr, th, td, input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 12px;
+}
+
+ul li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+img {
+    border: none;
+    outline-style: none;
+    vertical-align: middle;
+}
+
+a, s, i, b, u {
+    text-decoration: none;
+    font-style: normal;
+}
+
+img {
+    border: 0;
+    vertical-align: middle; /*  È¥µôÍ¼Æ¬µ×²¿Ä¬ÈÏµÄ3ÏñËØ¿Õ°×·ìÏ¶*/
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+input {
+    outline: none;
+}

@@ -1,0 +1,560 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;  /*清除元素的内外边距*/
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;  /*外面环绕线*/
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/*去掉原样式中的小黑点*/
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";  /*字体的自动识别*/
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+/*输入字居中显示*/
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+/**/
+textarea {
+    resize: none;  /*不可以随意拖动*/
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle; /*  去掉图片底部默认的3像素空白缝隙*/
+}
+
+table {
+    border-collapse: collapse; /*合并外连线*/
+}
+
+body {
+    font: 12px/150% "microsoft yahei",Arial, Verdana, "\5b8b\4f53"; /*unitedCode的写法，宋体的写法*/
+    color: #666; /*150%基于当前字体尺寸的百分比行间距*/
+    background: #F0F0F0;
+}
+
+.clearfix:before, .clearfix:after {
+    /*清除浮动，最好最标准的写法*/
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
+}
+
+a {
+    color: #666;   /*a 标签是不继承颜色 的*/
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   /*  text-decoration: none;
+    font-weight: normal;
+ /*    font-size: 100%; */ 
+}
+
+s, i, em {  /*一般是起装饰作用*/
+    font-style: normal;  /*去掉原有的样式*/
+    text-decoration: none;  /*去掉下划线或是删除线*/
+}
+
+.col-red {
+    color: #F10215 !important;/*京东主色调*/
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.al {
+    text-align: left;
+}
+
+.ac {
+    text-align: center;
+}
+
+.ar {
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+.pr{
+    position: relative;
+}
+.po{
+    position: absolute;
+}
+.mr0{
+    margin-right: 0;
+}
+/*css初始化完成*/
+
+/*图标字体开始*/
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:12px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    /*-webkit-text-stroke-width: 0.2px;*/ /*描边*/
+    -moz-osx-font-smoothing: grayscale;}
+
+/*图标字体结束*/
+
+/*顶部banner开始*/
+.topBanner{
+    width: 100%;
+    height: 80px;
+    background-color: #FF7900;
+}
+.topBanner a{
+    display: block;
+    height: 80px;
+    background: url("../images/topBanner.jpg");
+}
+/*.topBanner .w{
+    position: relative;
+}*/
+.topBanner .iconfont{
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    opacity: 0.2;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    /*font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;*/
+    font: bold 18px/20px "simsun";
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+/*顶部banner结束*/
+
+/*快速导航开始*/
+.shortcut{
+    height: 30px;
+    background-color: #E3E4E5;
+    border-bottom: 1px solid #DDDDDD;
+    color: #999999;
+    line-height: 30px;
+}
+/*左边*/
+.shortcut-left {
+    margin-left: 204px;
+}
+.shortcut-left .iconfont{
+    color: #F10215;
+    font-size: 14px;
+    margin: 0 5px;
+}
+/*右边*/
+.shortcut-right li{
+    float: left;
+    padding: 0 13px 0 12px;
+}
+.shortcut-right li.line{
+    padding: 0;
+    height: 10px;
+    border-left: 1px solid #CCCCCC;
+    margin-top: 11px;
+}
+.shortcut-right li a{
+    color: #999999;
+}
+.shortcut-right li a:hover,.shortcut-right li .style-red:hover{
+    color:#c81623;
+}
+.shortcut-right li .style-red{
+    color: #F10215;
+}
+/*.shortcut-right li .style-red:hover{
+    color:#c81623;
+}*/
+.shortcut-right li.dropdown{
+    padding-right: 27px;
+    position: relative;
+}
+.dropdown .iconfont{
+    position: absolute;
+    top: 16px;
+    right: 11px;
+    line-height: 0;
+}
+/*快速导航结束*/
+
+/*header开始*/
+.header{
+    height: 140px;
+    position: relative;
+}
+/*logo*/
+.logo{
+    width: 190px;
+    height: 170px;
+    position: absolute;
+    left: 0;
+    top: -31px;
+}
+.logo a{
+    display: block;
+    width: 190px;
+    height: 170px;
+    background: #ffffff url("../images/logo.png");
+    text-indent: -999em;
+    overflow: hidden;
+    /*隐藏，搭配起来text-indent才起作用*/
+}
+/*搜索*/
+.search{
+    width: 550px;
+    height: 35px;
+    position: absolute;
+    left: 320px;
+    top: 25px;
+}
+.search input{
+    width: 495px;
+    height: 33px;
+    border: 1px solid #F10215;
+    float: left;
+    border-right: 0;
+    padding-left: 3px;/*一定要内减*/
+    color: #999999;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+}
+.search button{
+    width: 51px;
+    height: 35px;
+    background-color: #F10215;
+    float: left;
+    font: bold 20px/35px "simsun";
+    color: #ffffff;
+    cursor: pointer;
+}
+/*购物车*/
+.car{
+    width: 137px;
+    height: 33px;
+    background-color: #fff;
+    border: 1px solid #E3E4E5;
+    position: absolute;
+    top: 25px;
+    right: 99px;
+    padding-left: 51px;
+    line-height: 33px;
+}
+.car .iconfont{
+    font-size: 18px;
+    color: #F10215;
+    margin-right: 4px;
+}
+.car a{
+    color: #F10215;
+}
+.car .count{
+    width: 16px;
+    height: 16px;
+    background-color: #F10215;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 32px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 16px;
+}
+/*搜索热词*/
+.hotWords{
+    width: 550px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    left: 320px;
+    top: 60px;
+}
+.hotWords a{
+    line-height: 30px;
+    margin-right: 7px;
+    color: #999999;
+}
+.hotWords a:hover,.hotWords .style-red:hover{
+    color:#c81623;
+}
+.hotWords .style-red{
+    color: #F10215;
+}
+/*导航*/
+.nav{
+    width: 790px;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    left: 200px;
+    bottom: 0;
+}
+.nav li{
+    float: left;
+    margin-left: 30px;
+}
+.nav li a{
+    display: block;
+    height: 40px;
+    font: bold 16px/40px "microsoft yahei";
+    color: #555555;
+}
+.nav li a:hover{
+    color:#c81623;
+}
+.nav li.spacer{
+    width: 1px;
+    height: 10px;
+    background-color: #CCCCCC;
+    /*margin-left: 20px;
+    margin-top: 15px;
+    margin-right: -10px;*/
+    margin: 15px -10px 0 20px;
+}
+/*财富模块*/
+.treasure{
+    width: 190px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.treasure a{
+    display: block;
+    width: 190px;
+    height: 40px;
+    background: url("../images/treasure.png");
+}
+/*header结束*/
+
+/*底部模块开始*/
+.footer{
+    width: 100%;
+    height: 500px;
+    background-color: #EAEAEA;
+}
+/*模板服务*/
+.mod-service{
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #DEDEDE;
+    padding: 30px 0; /*一定要内减*/
+}
+.mod-service li{
+    width: 261px;
+    height: 42px;
+    margin-left: 36px;
+    float: left;
+}
+.mod-service li h5{
+    width: 36px;
+    height: 42px;
+    overflow: hidden;
+    background: url("../images/ico_service.png");
+    float: left;
+    margin-right: 10px;
+    text-indent: -999px;
+}
+.mod-service li.mod-service2 h5{
+    background-position: 0 -43px;
+}
+.mod-service li.mod-service3 h5{
+    background-position: 0 -86px;
+}
+.mod-service li.mod-service4 h5{
+    background-position: 0 -129px;
+}
+.mod-service li p{
+    font: bold 18px/42px "microsoft yahei";
+    color: #444444;
+}
+/*模板帮助*/
+.mod-help{
+    height: 180px;
+    border-bottom: 1px solid #DEDEDE;
+    padding-top: 20px;
+}
+.mod-help dl{
+    width: 196px;
+    float: left;
+}
+.mod-help dl dt{
+    height: 28px;
+    font: bold 14px/24px "microsoft yahei";
+
+}
+.mod-help dl dd{
+    line-height: 22px;
+}
+.mod-help .cover{
+    width: 180px;
+    height: 150px;
+    background: url("../images/ico_footer.png");
+    float: right;
+    padding: 0 10px;
+}
+.mod-help .cover h5{
+    font: bold 14px/22px "microsoft yahei";
+    height: 36px;
+    text-align: center;
+}
+/*模板版权*/
+.mod-copyright{
+    padding: 16px 0;
+    text-align: center;
+}
+.mod-copyright span{
+    margin: 0 6px 0 10px;
+    color: #D1CCD1;
+}
+/*信息*/
+.mod-copyright .info{
+    padding: 10px 0;
+    line-height: 22px;
+    color: #999999;
+}
+.mod-copyright .info span{
+    margin-right: 10px;
+}
+.info a{
+    color: #999999;
+}
+/*认证*/
+.auth a{
+    overflow: hidden;
+    display: inline-block;
+    width: 103px;
+    height: 32px;
+    background: url("../images/ico_footer.png") 0 -151px;
+    margin: 0 1px;
+    line-height: 1000px;
+}
+/*底部模块结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

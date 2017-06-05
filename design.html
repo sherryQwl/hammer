@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>锤子设计</title>
+    <link rel="stylesheet" href="css/base_design.css">
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <style>
+        html, body .gunDongPic, .section, #top_one, #top_two {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <!--<script src="js/jQuery-plugins/jquery.color.js"></script>-->
+    <script>
+        $(function () {
+            //    第一张大背景图的
+            //获得屏幕的宽和高  大背景区的宽和高
+            var heights = $(window).height();
+            var widths = $(window).width();
+            //设置第一个背景图的高度
+            $("#top_one,.somin").css({
+                height: heights,
+                width: widths
+            });
+            $("#top_two,.jishen").css({
+                height: heights,
+                width: widths
+            });
+            //第一滚动导航栏变大
+
+
+            $(".gunDongPic").fullpage({
+                "navigation": true,
+                scrollingSpeed: 700,
+                onLeave: function (anchorLink, index) {
+                    $(".openpage > li").eq(index - 1).addClass("active").siblings().removeClass("active");
+                    if (index == 2) {
+                        $(".fix_top").css({
+                            position: "fixed",
+                            top: 0,
+                            left: 0,
+                            zIndex: 99,
+                        }).stop().show(400);
+                    }
+                    if (index == 1) {
+                        $(".fix_top").css({
+                            position: "fixed",
+                            top: 0,
+                            left: 0,
+                            zIndex: 99
+                        }).stop().fadeOut(200);
+                    }
+                },
+                afterLoad: function (anchorLink, index) {
+                    if (index == 3) {
+                        $(".jishen").stop().animate({top: "-100px"}, 2000, "swing")
+                    }
+                    if (index != 3) {
+                        $(".jishen").css({top: "0"});
+                    }
+                }
+            });
+        })
+    </script>
+    <script>
+        // 第0个页面的动画
+        $(function () {
+            $(".jieti_0 .pic").on("mouseenter", function () {
+                $(".jieti_0 .pic div:eq(0)").css("left", 200).fadeIn(300);
+                $(".jieti_0 .pic div:eq(1)").css("right", 200).fadeIn(300);
+            });
+            $(".jieti_0 .pic").on("mouseleave", function () {
+                $(".jieti_0 .pic div:eq(0)").stop().animate({
+                    "left": 150
+                }, 500).fadeOut(300);
+                $(".jieti_0 .pic div:eq(1)").stop().animate({
+                    "right": 150
+                }, 500).fadeOut(300);
+            });
+        });
+    </script>
+</head>
+<body>
+<!--滚动后的结构开始-->
+<div class="fix_top">
+    <div class="fix_box">
+        <span class="fix_pro">坚果 Pro</span>
+        <ul class="fix_nav_l">
+            <li><a href="#">概览</a></li>
+            <li><a href="#">功能</a></li>
+            <li><a href="#">设计</a></li>
+            <li><a href="#">实力派</a></li>
+            <li><a href="#">操作系统</a></li>
+            <li><a href="#">技术规格</a></li>
+            <li><a href="#">图库</a></li>
+        </ul>
+        <span class="sping1 fr"><a href="#">立即购买</a></span>
+        <ul class="fix_nav_r fr">
+            <li><a href="#">优先购买码</a></li>
+            <li><a href="#">手机回收置换计划</a></li>
+        </ul>
+    </div>
+</div>
+<!--滚动后的结构结束-->
+<div class="gunDongPic">
+    <div class="jieti_0 section">
+        <div class="header">
+            <div class="headerC banxin clearfix">
+                <div class="logo fl">
+                    <h1><a href="#"></a></h1>
+                </div>
+                <div class="links fl">
+                    <ul>
+                        <li><a href="#">在线商城</a></li>
+                        <li><a href="#">坚果Pro</a></li>
+                        <li><a href="#">Smartisan M1 / M1L</a></li>
+                        <li><a href="#">Smartisan OS</a></li>
+                        <li><a href="#">欢喜云</a></li>
+                        <li><a href="#">应用下载</a></li>
+                        <li><a href="#">官方论坛</a></li>
+                    </ul>
+                </div>
+                <div class="small-icon fr">
+                    <div class="user fl">
+                        <a href="./login.html" target="_blank"></a>
+                    </div>
+                    <div class="car fl">
+                        <a href="#">
+                            <span>0</span>
+                        </a>
+
+                        <div class="buyCar">
+                            <span></span>
+
+                            <h3>购物车为空</h3>
+
+                            <p>您还没有选购任何商品，现在前往商城选购吧！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--未滚动前的结构开始-->
+        <div class="fixtop">
+            <div class="fixbox">
+                <ul class="fixnav_l fl">
+                    <li><a href="#">概览</a></li>
+                    <li><a href="#">功能</a></li>
+                    <li><a href="#">设计</a></li>
+                    <li><a href="#">实力派</a></li>
+                    <li><a href="#">操作系统</a></li>
+                    <li><a href="#">技术规格</a></li>
+                    <li><a href="#">图库</a></li>
+                </ul>
+                <span class="sping fr"><a href="#">立即购买</a></span>
+                <ul class="fixnav_r fr">
+                    <li><a href="#">优先购买码</a></li>
+                    <li><a href="#">手机回收置换计划</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--未滚动前的结构开始-->
+        <div class="pic">
+            <div class="pic_l"><img src="images/1-l.png" alt=""/></div>
+            <p></p>
+            <div class="pic_r"><img src="images/1-r.png" alt=""/></div>
+        </div>
+    </div>
+    <!--第一个大背景图开始-->
+    <div class="jieti_1 section">
+        <!--<img src="images/top-1.jpg" id="top_one" alt="锤子手机">-->
+        <div id="top_one"></div>
+        <h2>全玻璃面板时代的双材质惊艳碰撞</h2>
+    </div>
+    <!--第一个大背景图结束-->
+    <!--第二个大背景图开始-->
+    <div class="jieti_2 section">
+        <div id="top_two"></div>
+        <div class="jishen"></div>
+        <h2>肉感时代的纤瘦身影</h2>
+    </div>
+    <!--第二个大背景图结束-->
+    <!--第四个大背景图开始-->
+    <div class="somin section">
+        <div class="sominC">
+            <ul id="jieso">
+                <li id="show" class="jieso1"></li>
+                <li class="jieso2"></li>
+                <li class="jieso3"></li>
+                <li class="jieso4"></li>
+                <li class="jieso5"></li>
+                <li class="jieso6"></li>
+            </ul>
+            <span class="left"><a href="javascript:void(0)"></a></span>
+            <span class="right"><a href="javascript:void(0)"></a></span>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var num = 0;
+            var lis = $("#jieso li");
+            lis.each(function (index, ele) {
+                $(ele).css("z-index", lis.length - index);
+            })
+            $(".sominC .left").on("click", function () {
+                if (num == 1) {
+                    lis.eq(0).stop().animate({
+                        top: 0
+                    });
+                    num--;
+                } else {
+                    num--;
+                    lis.eq(num).stop().animate({
+                        "width": 580,
+                        "height": 880
+                    }, 500).stop().fadeIn(500).siblings();
+
+                }
+                if (num <= 0) {
+                    num = 0;
+                    $(this).css("display", "none");
+                }
+                if (num != lis.length - 1) {
+                    $(this).next().css("display", "block");
+                }
+
+            });
+            $(".sominC .right").on("click", function () {
+                console.log(lis.eq(num));
+                if (num == 0) {
+                    lis.eq(0).stop().animate({
+                        top: 600
+                    });
+                    num++;
+                } else {
+                    lis.eq(num).stop().animate({
+                        "width": 700,
+                        "height": 1000
+                    }, 500).stop().fadeOut(1000);
+                    console.log(num);
+                    num++;
+                }
+                if (num != 0) {
+                    $(this).prev().css("display", "block");
+                }
+                if (num >= lis.length - 1) {
+                    num = lis.length - 1;
+                    $(this).css("display", "none");
+                }
+
+
+            });
+        });
+    </script>
+    <!--第四个大背景图结束-->
+</div>
+
+
+<!-- 右侧选择器 开始-->
+<ul class="openpage">
+    <li class="active">
+        <span class="out-ring"></span>
+        <span class="in-ring"></span>
+        <span class="page-title">不同的材质结合</span>
+    </li>
+    <li>
+        <span class="out-ring"></span>
+        <span class="in-ring"></span>
+        <span class="page-title">机身纤薄</span>
+    </li>
+    <li>
+        <span class="out-ring"></span>
+        <span class="in-ring"></span>
+        <span class="page-title">全新配色</span>
+    </li>
+    <li>
+        <span class="out-ring"></span>
+        <span class="in-ring"></span>
+        <span class="page-title">包装</span>
+    </li>
+    <li>
+        <span class="out-ring"></span>
+        <span class="in-ring"></span>
+        <span class="page-title">为了那些改变人类进程的足迹</span>
+    </li>
+</ul>
+<!-- 右侧选择器 结束-->
+<script>
+    $(function () {
+        $(".openpage > li").on("click", function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $.fn.fullpage.moveTo($(this).index() + 1, 0);
+        });
+    })
+</script>
+</body>
+</html>

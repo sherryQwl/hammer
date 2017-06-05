@@ -1,0 +1,600 @@
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;  /*清除元素的内外边距*/
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;  /*外面环绕线*/
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/*去掉原样式中的小黑点*/
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";  /*字体的自动识别*/
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+/*输入字居中显示*/
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+/**/
+textarea {
+    resize: none;  /*不可以随意拖动*/
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle; /*  去掉图片底部默认的3像素空白缝隙*/
+}
+
+table {
+    border-collapse: collapse; /*合并外连线*/
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53"; /*unitedCode的写法，宋体的写法*/
+    color: #666; /*150%基于当前字体尺寸的百分比行间距*/
+    background: #fff;
+    overflow: hidden;
+}
+
+.clearfix:before, .clearfix:after {
+    /*清除浮动，最好最标准的写法*/
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
+}
+
+a {
+    color: #666;   /*a 标签是不继承颜色 的*/
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {  /*一般是起装饰作用*/
+    font-style: normal;  /*去掉原有的样式*/
+    text-decoration: none;  /*去掉下划线或是删除线*/
+}
+
+.col-red {
+    color: #C81623 !important;/*京东主色调*/
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.al {
+    text-align: left;
+}
+.ac {
+    text-align: center;
+}
+.ar {
+    text-align: right;
+}
+.hide {
+    display: none;
+}
+/*css初始化完成*/
+@charset "utf-8";
+
+body {
+    font-family: PingFang SC,Helvetica Neue,Helvetica,Arial,Hiragino Sans GB,Microsoft Yahei,\\5FAE\8F6F\96C5\9ED1,STHeiti,\\534E\6587\7EC6\9ED1,sans-serif;
+    /*background-color: rgb(237, 237, 237);*/
+    /*background-color: skyblue;*/
+    height: 3000px;
+}
+
+.banxin {
+    width: 1220px;
+    margin: 0 auto;
+}
+
+/* 头部开始 */
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #0C0C0C;
+    /*border-bottom: 1px solid #8E8E8E;*/
+}
+
+.header .logo a{
+    display: block;
+    width: 50px;
+    height:50px;
+    margin-top: 25px;
+    margin-right: 173px;
+    background-position: 0 -280px;
+    background: url("../imags/精灵图/jlLOGO.png") no-repeat 50%;
+    background-size:cover ;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+.headerC .links li{
+    float: left;
+    padding-top: 40px;
+}
+.headerC .links li a {
+    font-size: 14px;
+    color: #C8C8C8;
+    padding: 0 25px;
+}
+.headerC .links li a:hover {
+    color: #fff;
+}
+.headerC .small-icon{
+    width: 108px;
+    padding-top: 40px;
+    position: relative;
+}
+.small-icon .user > a{
+    display: block;
+    width: 36px;
+    height: 20px;
+    background-position: -155px 0;
+    background: url("../imags/精灵图/jlxiaotubiao.png") -5px 0px;
+    background-size: 240px 107px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.small-icon .user a:hover {
+    background-position: -6px -2px;
+}
+
+.small-icon .car > a{
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    padding-left: 22px;
+    height: 20px;
+    vertical-align: middle;
+    background: url("../imags/精灵图/jlxiaotubiao.png") -150px -22px;
+}
+.small-icon .car > a > span{
+    display: block;
+    background-color: #9A9A9A;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+.small-icon .buyCar {
+    display: none;
+    width: 360px;
+    height: 134px;
+    padding-top: 180px;
+    position: absolute;
+    z-index: 2;
+    left: -110px;
+    top: 75px;
+    background: url("../imags/精灵图/bgcc.png") center 90px no-repeat;
+    background-size: auto 62px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #333;
+}
+.small-icon .buyCar span {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    margin-left: -18px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fff;
+}
+.small-icon .buyCar h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 7px;
+}
+.small-icon .buyCar p {
+    color:#bcbcbc;
+}
+/* 头部结束 */
+/*未滚动前的开始*/
+/*左边*/
+.fixtop{
+    width: 100%;
+    height: 36px;
+    background-color: #171717;
+}
+.fixtop .fixbox{
+    width: 1220px;
+    height: 36px;
+    margin: 0 auto;
+}
+.fixbox .fixnav_l li{
+    height: 36px;
+    font-size: 12px;
+    float: left;
+    margin-right: 28px;
+    line-height: 36px;
+    color: #4c4c4c;
+}
+.fixbox .fixnav_l a:hover,.fixbox .fixnav_r li a:hover{
+    color: #808080;
+}
+/*右边*/
+.fixbox .fixnav_r li{
+    float: left;
+}
+.fixbox .fixnav_r li a{
+    height: 36px;
+    font-size: 12px;
+    margin-left: 40px;
+    line-height: 36px;
+    color: #4c4c4c;
+}
+.fixbox .sping a{
+    display: inline-block;
+    height: 30px;
+    width: 96px;
+    margin-top: 3px;
+    margin-left: 40px;
+    color: #ffffff;
+    background-color: #254ba0;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+.fixbox .sping a:hover{
+    background-color: #192f5d;
+}
+/*未滚动前的结束*/
+ /*滚动后的样式开始*/
+.fix_top{
+    width: 100%;
+    border-bottom: 2px solid rgba(52,52,52,.3);
+    background-color: rgb(220,220,220);
+    display: none;
+}
+.fix_top .fix_box{
+    width: 1220px;
+    height: 60px;
+    margin: 0 auto;
+}
+.fix_top .fix_pro{
+    float: left;
+    height: 60px;
+    font-size: 18px;
+    line-height: 60px;
+    font-family: "微软雅黑";
+    color: #5e5e5e;
+}
+.fix_top .fix_nav_l{
+    float:left;
+    margin-left: 100px;
+    height: 60px;
+}
+.fix_top .fix_nav_l li{
+    float: left;
+    margin-right: 30px;
+}
+.fix_top .fix_nav_l a{
+    display: block;
+    height: 60px;
+    font-size: 14px;
+    line-height: 60px;
+    font-family: "微软雅黑";
+    color: #343434;
+}
+.fix_top .sping1{
+    float: right;
+    margin-top: 10px;
+}
+.fix_top .sping1 a{
+    display: block;
+    width: 110px;
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    font-family:"微软雅黑";
+    background-color:#254ba0;
+    border-radius: 5px;
+}
+.fix_top .sping1 a:hover{
+    background-color: #162b6b;
+}
+.fix_top .fix_nav_r li{
+    float: left;
+    margin-right: 40px;
+}
+.fix_top .fix_nav_r li a{
+    display: block;
+    height: 60px;
+    font-size: 14px;
+    line-height: 60px;
+    font-family: "微软雅黑";
+    color: #4c4c4c;
+
+}
+.fix_top li a:hover{
+    color:#717171 ;
+}
+
+ /*滚动后的样式结束*/
+
+/* 第0个大背景图开始 */
+.jieti_0 .pic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("../imags/1-c.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+
+.jieti_0 .pic > * {
+    position: absolute;
+    display: none;
+    top: 100px;
+    width: 300px;
+}
+.jieti_0 .pic img{
+    width: 100%;
+}
+.jieti_0 .pic .pic_l {
+    left: 150px;
+}
+.jieti_0 .pic .pic_r {
+    right: 150px;
+}
+/* 第0个大背景图结束 */
+
+
+/*第一个大背景图开始*/
+.jieti_1{
+    /*width: 100%;*/
+    position: relative;
+}
+#top_one{
+   background: url("../imags/top-1.jpg") no-repeat center top;
+    background-size: auto 100%;
+}
+.jieti_1 h2{
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -210px;
+    font-size: 28px;
+    font-weight: 100;
+    color:#678392 ;
+}
+/*第一个大背景图结束*/
+/*第二个大背景图开始*/
+.jieti_2{
+    position: relative;
+}
+#top_two{
+    background: url("../imags/3-c.jpg") repeat center top;
+    background-size: auto 100%;
+}
+.jieti_2 h2{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -126px;
+    font-size: 28px;
+    font-weight: 100;
+    color: #919191;
+}
+.jieti_2 .jishen{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: url("../imags/top-2.png") no-repeat center top;
+    background-size: auto 100%;
+}
+
+/*第二个大背景图结束*/
+/*第三张大背景开始*/
+
+
+
+/*第三张大背景结束*//*第四张大背景开始*/
+.somin{
+    background-color:#f0f0f0;
+    /*opacity: ;*/
+}
+.sominC{
+    height: 100%;
+    width: 1220px;
+    margin: 0 auto;
+    position: relative;
+}
+.somin .left{
+    position:absolute;
+    left: 20px;
+    top: 50%;
+    margin-top: -24px;
+    display: none;
+}
+.somin .left a{
+    display: block;
+    width: 48px;
+    height: 48px;
+    background:url("../imags/btn-l.png");
+}
+.somin .right{
+    position:absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -24px;
+}
+.somin .right a{
+    display: block;
+    width: 48px;
+    height: 48px;
+    background:url("../imags/btn-r.png");
+}
+/*中间手机配件相关开始*/
+#jieso{
+    position: absolute;
+    top:50%;
+    margin-top: -380px;
+    left: 50%;
+    margin-left: -290px;
+
+}
+#jieso {
+    width: 100%;
+    height: 100%;
+}
+
+#jieso .jieso1 ,#jieso .jieso2 , #jieso .jieso3, #jieso .jieso4, #jieso .jieso5,#jieso .jieso6{
+    position: absolute;
+    width: 580px;
+    height: 880px;
+    background-size: contain;
+}
+#jieso .jieso1{
+    background-image: url("../imags/productPic/1.png");
+}
+#jieso .jieso2{
+    background-image: url("../imags/productPic/2.png");
+}
+#jieso .jieso3{
+    background-image: url("../imags/productPic/3.png");
+}
+#jieso .jieso4{
+    background-image: url("../imags/productPic/4.png");
+}
+#jieso .jieso5{
+    background-image: url("../imags/productPic/5.png");
+}
+#jieso .jieso6{
+    background-image: url("../imags/productPic/6.png");
+}
+/*#jieso #show{*/
+    /*display: block;*/
+/*}*/
+/*中间手机配件相关结束*/
+/*第四张大背景结束*/
+
+/*右侧选择器 开始*/
+.openpage{
+    opacity: 1;
+    position: fixed;
+    top: 93px;
+    right: 40px;
+    z-index: 20;
+    /*display: none;*/
+}
+.openpage li{
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    padding: 7px 0;
+    position: relative;
+}
+.openpage li .out-ring{
+    display: block;
+    border: 1px solid #cacaca;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+    transform:scale(.5);
+    transition:all .3s ease-out;
+}
+.openpage li .in-ring{
+    background: #6c6c6c;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    opacity: 0.6;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform:translateY(-50%);
+    transition:opacity .3s ease-out;
+}
+.openpage li .page-title{
+    color: #6c6c6c;
+    text-align:right;
+    opacity:0;
+    white-space:nowrap;/*文本不进行换行*/
+    padding:0 15px 0 0;
+    position:absolute;
+    right: 0;
+    top: 4px;
+    transition:opacity .1s ease-out;
+}
+/*选中整体下*/
+.openpage .active .out-ring{
+    opacity: 1;
+    transform:scale(1);
+}
+.openpage .active .in-ring{
+    opacity: 0;
+}
+.openpage li .page-title:hover{
+    opacity: 1;
+}
+/* 右侧选择器 结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

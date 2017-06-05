@@ -1,0 +1,288 @@
+/*
+* @Author: Administrator
+* @Date:   2017-06-03 18:38:26
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-06-03 21:36:29
+*/
+body {
+    background: url(../images/bg_9b9dcb65ff.png) repeat;
+}
+
+/* 表单样式 */
+.form {
+    width: 450px;
+    height: 543px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 134px;
+    border: 1px solid #dadada;
+    border-radius:10px;
+    box-shadow: 0 9px 30px -6px rgba(0,0,0,.2), 0 18px 20px -10px rgba(0,0,0,.04), 0 18px 20px -10px rgba(0,0,0,.04), 0 10px 20px -10px rgba(0,0,0,.04);
+}
+
+/* 图片样式 */
+.img {
+    padding-left: 50%;
+}
+
+.img img {
+    margin-left: -80px;
+    margin-top: 8px;
+}
+
+/* 文字样式 */
+.useId {
+    text-align: center;
+    font-weight: 400;
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color: #333;
+}
+
+/* 第一个输入框样式 */
+.firInput, .secInput {
+    width: 366px;
+    height: 46px;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 6px;
+    opacity: 0.7;
+    position: relative;
+}
+
+.firInput:hover, .secInput:hover {
+    opacity: 1;
+}
+
+.firInput .tipOne {
+    width: 134px;
+    height: 26px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -13px;
+    background: #d16d62;
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 6px;
+    margin-right: 10px;
+    display: none;
+}
+
+.firSpr, .secSpr {
+    width: 46px;
+    height: 46px;
+    border-right: 1px solid #ddd;
+    background-image: url(../images/dialog-input-icons_e7e327a2b8.png);
+}
+
+.firInput input, .secInput input {
+    line-height: 46px;
+    font-family: 华文黑体, "Microsoft YaHei", 微软雅黑;
+    font-size: 16px;
+    margin-left: 16px;
+}
+
+.secInput {
+    margin-top: 15px;
+}
+
+.wrong {
+    color: red
+}
+
+.right {
+    color: green;
+}
+
+.pass-wrap {
+    opacity: 1;
+    margin-right: 10px;
+    display: none;
+}
+
+.strengthLv0 {
+    height: 26px;
+    /*width: 10px;*/
+
+    padding: 2px;
+    /*background:#d16d62;*/
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+
+.strengthLv1 {
+    background: red;
+    height: 26px;
+    width: 20px;
+    border-radius: 6px;
+    padding: 2px;
+    background: #d16d62;
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+
+.strengthLv2 {
+    background: orange;
+    height: 26px;
+    width: 40px;
+    border-radius: 6px;
+    padding: 2px;
+    background: #d16d62;
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+
+.strengthLv3 {
+    background: green;
+    height: 26px;
+    width: 60px;
+    border-radius: 6px;
+    padding: 2px;
+    background: #d16d62;
+    color: white;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 6px;
+    margin-right: 10px;
+    margin-top: 9px;
+    margin-right: 10px;
+}
+
+.form .secInput .secSpr {
+    background: url(../images/dialog-input-icons_e7e327a2b8.png) no-repeat -50px 0;
+}
+
+/* 中间文字开始 */
+.smallTxt {
+    width: 366px;
+    margin: 0 auto;
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.smallTxt .leftTxt span {
+    color: #999;
+    vertical-align: top;
+}
+
+/* 隐藏的实心勾选 */
+
+.leftTxt i {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(../images/checkbox_f49f6e4acf.png) 0 -19px;
+    margin-right: 6px;
+}
+
+
+
+.rightTxt span {
+    margin: 0 8px;
+}
+
+.rightTxt a {
+    color: #5079d9;
+}
+
+/* 登录按钮开始 */
+.login1 {
+    width: 368px;
+    height: 46px;
+    background: #b8c9ec;
+    margin-top: 24px;
+    margin-left: 40px;
+    border: 1px solid #bdc8e3;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+}
+
+.share {
+    height: 63px;
+    width: 368px;
+    margin-top: 27px;
+    margin-left: 40px;
+    border-top: 1px solid #d9d9d9;
+    background: #f0eff0;
+    line-height: 63px;
+    font-size: 12px;
+}
+
+.share i, b, s {
+    display: inline-block;
+    width: 20px;
+    height: 17px;
+    background: url("../images/icons_86423c6fdc.png");
+    vertical-align: middle;
+    margin-left: 16px;
+}
+.share i:hover {
+    background: url("../images/icons-hover_b6e43698ad.png") 0 0;
+}
+.share b {
+    background: url("../images/icons_86423c6fdc.png") -28px 0;
+}
+.share b:hover {
+    background: url("../images/icons-hover_b6e43698ad.png") -28px 0;
+}
+.share s {
+    background: url("../images/icons_86423c6fdc.png") -60px 0;
+}
+.share s:hover {
+    background: url("../images/icons-hover_b6e43698ad.png") -60px 0;
+}
+
+.share img {
+    margin-left: 14px;
+}
+button {
+    width: 368px;
+    height: 46px;
+    background: #b8c9ec;
+    margin-top: 24px;
+    margin-left: 40px;
+    border: 1px solid #bdc8e3;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+}
+
+.bottom {
+    background: url(../images/dialog-gray-bg_42c40b3eb6.png) repeat;
+}
+
+/* 底部开始 */
+.foot {
+    margin-top: 77px;
+    font-size: 12px;
+    height: 15px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.foot a {
+    color: #5088e1;
+}
+
+.foot i {
+    margin: 0 10px;
+}

@@ -1,0 +1,50 @@
+.dongTai{
+    overflow: hidden;
+    position: relative;
+    margin-top: 29px;
+    border: 1px solid rgba(0,0,0,.14);
+    border-radius: 8px;
+    background: #fff;
+}
+.dongTai .title-header{
+    position: relative;
+    font-size: 18px;
+    line-height: 60px;
+    color: #666;
+    background: #fafafa;
+}
+.dongTai .title-header h5{
+    margin-left: 30px;
+    font-size: 16px;
+}
+.dongTai .box-img {
+    border-top: 1px solid rgba(0,0,0,.14);
+}
+.dongTai .box-img li{
+    float: left;
+    position: relative;
+    width: 25%;
+    text-align: center;
+}
+.dongTai .box-img li a{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
+    opacity: 0.0;
+}
+.dongTai .box-img li img {
+    width: 100%;
+
+}
+.box-img .shoujiPic{
+    width: 610px;
+    height: 418px;
+    overflow: hidden;
+}
+.jingxuan li{
+    border-bottom: 1px solid #e5e5e5;
+}

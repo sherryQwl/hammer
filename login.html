@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" class="ico">
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src='js/login.js'></script>
+</head>
+<body>
+<!-- 表单 开始 -->
+<div class="form">
+    <!-- 图片 开始 -->
+
+    <div class="img">
+        <img src="images/smartisan_4ada7fecea.png" height="160" width="160" alt="">
+    </div>
+    <!-- 文字 开始 -->
+    <div class="useId">
+        <p>使用Smartisan ID登录在线商城</p>
+    </div>
+    <!-- 第一个输入框开始 -->
+    <div class="bottom">
+        <div class="firInput">
+            <div class="firSpr fl"></div>
+            <input type="text" class="fl" placeholder="手机号/邮箱" id='inpMobile'>
+            <div class='tipOne'>手机号/邮箱格式错误</div>
+        </div>
+        <div class="secInput">
+            <div class="secSpr fl"></div>
+            <input type="password" class="fl" placeholder="密码"id='inpPass'>
+            <div class="pass-wrap fr">
+                <div id="strengthLevel" class="strengthLv0"><em id="strength"></em></div>
+            </div>
+        </div>
+
+        <!-- 中间文字开始 -->
+        <div class="smallTxt clearfix">
+            <div class="leftTxt fl checked">
+                <i class="checked"></i>
+                <span>7天内自动登录</span>
+            </div>
+            <div class="rightTxt fr">
+                <a href="#">注册Smartisan ID</a>
+                <span>|</span>
+                <a href="#">忘记密码？</a>
+            </div>
+        </div>
+
+        <!-- 登录按钮开始 -->
+        <input type="button" class="login1" id='login1' value="登录" disabled="disabled"/>
+
+        <div class="share">
+            <div class="shareLeft fl"><span>其他账号登录 :</span><i></i><b></b><s></s></div>
+            <a class="shareRight fr">国际手机号登录 ><span></span></a>
+        </div>
+    </div>
+</div>
+
+<!-- 底部开始 -->
+<div class="foot">
+    <span>Copyright © 2017, Smartisan Digital Co.,Ltd.    All Rights Reserved. 北京锤子数码科技有限公司</span><i>
+    | </i><a>法律声明</a><i> | </i><a>隐私条款</a><br>
+    <a>京ICP备14041720号-1京ICP证140622号京公网安备11010502025474</a>
+</div>
+<br><br><br/><br/><br/>
+</body>
+</html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" class="ico"/>
+    <link rel="stylesheet" type="text/css" href="css/cssReset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/dongTai.css"/>
+    <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="js/demo.js"></script>
+
+</head>
+<body>
+<!-- 头部开始-->
+<div class="header">
+    <div class="headerC banxin clearfix">
+        <div class="logo fl">
+            <h1><a href="#">锤子</a></h1>
+        </div>
+        <div class="links fl">
+            <ul>
+                <li><a href="#">在线商城</a></li>
+                <li><a href="./design.html" target="_blank">坚果Pro</a></li>
+                <li><a href="#">Smartisan M1 / M1L</a></li>
+                <li><a href="#">Smartisan OS</a></li>
+                <li><a href="#">欢喜云</a></li>
+                <li><a href="#">应用下载</a></li>
+                <li><a href="#">官方论坛</a></li>
+            </ul>
+        </div>
+        <div class="small-icon fr">
+            <div class="user fl">
+                <a href="./login.html" target="_blank"></a>
+            </div>
+            <div class="car fl">
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="count">0</span>
+                </a>
+
+                <div class="buyCar">
+                    <span></span>
+
+                    <h3>购物车为空</h3>
+
+                    <p>您还没有选购任何商品，现在前往商城选购吧！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".small-icon .car").hover(function () {
+            $(this).find(".buyCar").stop().fadeIn(100);
+//                $(this).children("a").css("background-position", "-5px -22px");
+        }, function () {
+            $(this).find(".buyCar").stop().fadeOut(100);
+//                $(this).children("a").css("background-position", " -154px -22px");
+        });
+    });
+</script>
+<!-- 头部结束-->
+<!-- 导航开始 -->
+<div class="nav">
+    <div class="shade">
+        <div class="phone-list">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="images/phone-list-001.png" alt=""/>
+                        </div>
+                        <div class="phone-name">坚果 Pro</div>
+                        <div class="phone-price">¥ 1,499 起</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="images/phone-list-001.png" alt=""/>
+                        </div>
+                        <div class="phone-name">Smartisan M1 / M1L</div>
+                        <div class="phone-price">¥ 2,499 起</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="line"></div>
+    </div>
+    <div class="banxin clearfix">
+        <div class="nav-links fl">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">手机</a></li>
+                <li><a href="#">“足迹系列”手感膜</a></li>
+                <li><a href="#">官方配件</a></li>
+                <li><a href="#">周边产品</a></li>
+                <li><a href="#">第三方配件</a></li>
+                <li><a href="#">全部商品</a></li>
+                <li><a href="#">服务</a></li>
+            </ul>
+        </div>
+        <div class="small-icon fr">
+            <div class="user fl">
+                <a href="#"></a>
+            </div>
+            <div class="car fl">
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="count">0</span>
+                </a>
+
+                <div class="buyCar">
+                    <span></span>
+
+                    <h3>购物车为空</h3>
+
+                    <p>您还没有选购任何商品，现在前往商城选购吧！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spaceBox"></div>
+<script>
+    $(function () {
+        function show() {
+            $(".nav > .shade").stop().animate({
+                "height": 412,
+                "opacity": 1
+            }, 200);
+            $(".phone-list ul").stop().fadeIn(200);
+            $(".nav .line").stop().fadeIn(200);
+        };
+        function hide() {
+            $(".nav > .shade").stop().animate({
+                "height": 0,
+                "opacity": 0
+            }, 200);
+            $(".phone-list ul").stop().fadeOut(200);
+            $(".nav .line").stop().fadeOut(200);
+        }
+
+        $(".nav > .shade").mouseleave(function () {
+            hide();
+        })
+
+        $(".nav-links li:eq(1), .nav > .shade").on("mouseenter", function () {
+            show();
+        });
+        $(".nav-links li:eq(1)").siblings().on("mouseenter", function () {
+            hide();
+        })
+        $(".phone-list li a").hover(function () {
+            $(this).find("img").stop().animate({
+                top: $(this).position().top - 5
+            });
+        }, function () {
+            $(this).find("img").stop().animate({
+                top: $(this).stop().position().top + 5
+            });
+        });
+        var flag = true;
+
+        function teXiaoNav() {
+            if ($(window).scrollTop() > $(".header").height() + parseInt($(".nav").css("padding-top"))) {
+                if (flag) {
+                    flag = false;
+                    $(".nav .small-icon").css("display", "block");
+                    $(".nav").css({
+                        "display": "none",
+                        "position": "fixed",
+                        "z-index": 999,
+                        "top": 0,
+                        "padding": "16px 0",
+                        "background-color": "rgb(251,251,251)",
+                        "box-shadow": "0 0px 5px #ddd"
+                    }).stop().slideDown(300);
+
+                }
+            } else {
+                flag = true;
+                $(".nav .small-icon").css("display", "none");
+                $(".nav").css({
+                    "display": "block",
+                    "position": "absolute",
+                    "top": 101,
+                    "padding": "31px 0",
+                    "background-color": "rgb(237,237,237)",
+                    "box-shadow": "0 0px 5px transparent"
+                });
+            }
+        }
+
+        teXiaoNav();
+        $(window).scroll(teXiaoNav);
+    });
+</script>
+<!-- 导航结束 -->
+<!-- 导航开始 -->
+<div class="lunboTU">
+    <div class="slider banxin">
+        <ul class="slider-ul">
+            <li class="img-show"><a href="#"><img src="images/lunBoPic001.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic002.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic003.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic004.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic005.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic006.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic007.png" alt=""/></a></li>
+            <li><a href="#"><img src="images/lunBoPic008.png" alt=""/></a></li>
+        </ul>
+        <div class="arrow">
+            <span class="arrow-l"><</span>
+            <span class="arrow-r">></span>
+        </div>
+        <div class="circle clearfix">
+            <ul>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    (function(){
+        var ul = $(".slider-ul");
+        var lis = ul.children();
+        var circleUl = $(".circle > ul");
+        console.log(lis.length);
+
+        //动态生成小圆点
+        lis.each(function(i, ele){
+            circleUl.html(circleUl.html() + "<li></li>");
+        });
+        circleUl.children().eq(0).addClass("current");
+        //让小圆点的那个div居中
+        circleUl.parent(".circle").css({
+            "margin-left": -$(".circle")[0].offsetWidth / 2
+        });
+        //小圆点移入后换样式
+        circleUl.children().on("mouseenter", function () {
+            $(this).addClass("current").siblings().removeClass("current");
+        });
+
+        //左右箭头效果
+        $(".slider .arrow span").hover(function () {
+            $(this).stop().fadeTo(200, 0.7);
+        }, function () {
+            $(this).stop().fadeTo(200, 0.3);
+        });
+    })();
+    (function(){
+        var nowing = 0;
+        /*定义一个变量来控制图片的显示*/
+        var mytimer = null;
+        /*定义一个定时器*/
+
+        function autoplay() {   /*定义一个自动播放的函数*/
+            if (nowing < $(".slider .slider-ul li").length - 1) {
+                nowing++;
+            } else {
+                nowing = 0;
+            }
+            $(".slider .slider-ul li").eq(nowing - 1).stop().animate({"opacity": 0}, 1000,function(){
+                $(this).css("z-index", 1);
+            });
+            $(".slider .slider-ul li").eq(nowing).stop().animate({"opacity": 1}, 1000, function(){
+                $(this).css("z-index", 2);
+                flag = true;
+            });
+
+            //小圆点的同步
+            $(".circle ul li").eq(nowing).addClass("current").siblings().removeClass("current");
+        }
+
+        mytimer = setInterval(autoplay, 3000);
+
+        //鼠标进入的时候显示左右按钮
+        $(".slider").mouseenter(function () {
+            $(".arrow").css("display", "block");
+            console.log("自动轮播结束");
+            clearInterval(mytimer);
+        })
+        //鼠标离开的时候 隐藏左右按钮
+
+        $(".slider").mouseleave(function () {
+            $(".arrow").css("display", "none");
+            console.log("自动轮播开始");
+            mytimer = setInterval(autoplay, 3000);
+        })
+
+        var flag = true;
+        //点击左右按钮的时候的事件
+        $(".arrow-r").click(function () {
+            if(flag == true){
+                flag = false;
+                autoplay();
+            }
+        });//直接执行autoplay函数
+
+        //点击 左按钮的时候
+        $(".arrow-l").click(function () {
+            if(flag == true){
+                flag = false;
+                if (nowing > 0) {
+                    nowing--;
+                } else {
+                    console.log(nowing);
+                    nowing = $(".slider .slider-ul li").length - 1;
+                }
+
+
+                if (nowing == $(".slider .slider-ul li").length - 1) {
+                    console.log(111);
+                    $(".slider .slider-ul li").eq(0).stop().animate({"opacity": 0}, 1000,function(){
+//                        $(this).css("z-index", 1);
+                    });//隐藏第一个元素
+                    $(".slider .slider-ul li").eq(nowing).stop().animate({"opacity": 1}, 1000, function(){
+//                        $(this).css("z-index", 2);
+                        flag = true;
+                    });
+                } else {
+                    console.log(222);
+                    $(".slider .slider-ul li").eq(nowing + 1).stop().animate({"opacity": 0}, 1000, function(){
+//                        $(this).css("z-index", 1);
+                    });//当前元素后面的元素隐藏起来，因为点击的是左按钮
+                    $(".slider .slider-ul li").eq(nowing).stop().animate({"opacity": 1}, 1000, function(){
+//                        $(this).css("z-index", 2);
+                        flag = true;
+                    });//当前元素显示
+                }
+                //小圆点的变化
+                $(".circle ul li").eq(nowing).addClass("current").siblings().removeClass("current");
+            }
+
+        })
+
+        //小圆点移入,让对应的图片显示
+        $(".circle ul li").on("mouseenter", function () {
+            var index = $(this).index();
+            $(".slider .slider-ul li").eq(index).stop().animate({"opacity": 1}, 1000, function(){
+//                $(this).css("z-index", 2);
+            });
+            $(".slider .slider-ul li").eq(index).siblings().stop().animate({"opacity": 0}, 1000, function(){
+//                $(this).css("z-index", 1);
+            });
+
+        })
+    })();
+</script>
+<!-- 导航结束 -->
+<!-- 新产品模块开始 -->
+<div class="newPro banxin">
+    <ul class="clearfix">
+        <li>
+            <img src="images/newPro001.png" alt=""/>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/newPro002.jpg" alt=""/>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/newPro003.jpg" alt=""/>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/newPro004.jpg" alt=""/>
+            <a href="#" class="shadow"></a>
+        </li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        $(".newPro li,.dongTai li, .hotPro li, .jingXuan-img li, .app").hover(function () {
+            $(this).find("a.shadow").css("display", "block").stop().fadeTo(300, 0.6);
+            $(this).siblings().find("a.shadow").css("display", "none");
+            $(this).find(".operator").css("display", "block").stop().fadeIn(300);
+        }, function () {
+            $(this).find("a.shadow").css("display", "none").stop().fadeTo(300, 0);
+            $(this).find(".operator").stop().fadeOut(300, function () {
+                $(this).find(".operator").css("display", "none")
+            });
+        });
+    });
+</script>
+<!-- 新产品模块结束 -->
+<!-- 热门商品开始 -->
+<div class="hotPro banxin">
+    <div class="title-header">
+        <h5>热门商品</h5>
+    </div>
+    <ul class="box-img">
+        <li>
+            <img src="images/01.jpg" alt="" class="erji"/>
+
+            <div class="text">
+                <h6>Smartisan 半入耳式线控耳机</h6>
+
+                <p>卓越的 14.2mm 发音单元、三按键式线控</p>
+            </div>
+            <div class=" cloth">
+                <span class="red"></span>
+                <span class="blue"></span>
+                <span class="zong"></span>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/02.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Smartisan 半入耳式线控耳机</h6>
+
+                <p>卓越的 14.2mm 发音单元、三按键式线控</p>
+            </div>
+            <div class="toumingQuan"></div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/衣服02.png" alt="" class='redCloth'/>
+
+            <div class="text">
+                <h6>Smartisan 半入耳式线控耳机</h6>
+
+                <p>卓越的 14.2mm 发音单元、三按键式线控</p>
+
+
+            </div>
+            <div class="dot">
+                <span class="red"></span>
+                <span class="blue"></span>
+                <span class="zong"></span>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/04.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Smartisan 半入耳式线控耳机</h6>
+
+                <p>卓越的 14.2mm 发音单元、三按键式线控</p>
+            </div>
+            <div class="toumingQuan"></div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+    </ul>
+</div>
+<!-- 热门商品结束 -->
+
+
+<!--官方精选开始-->
+<div class="hotPro banxin jingxuan">
+    <div class="title-header">
+        <h5>官方精选</h5>
+    </div>
+    <ul class="box-img">
+        <div class="fl shoujiPic"><img src="images/a.png" alt=""/></div>
+        <li>
+            <img src="images/手机壳.jpg" alt=""/>
+
+            <div class="text">
+                <h6>坚果 Pro 软胶保护套</h6>
+
+                <p>TPU 环保材质、耐磨、耐油、耐久性强</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>49.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/手机线.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Smartisan 原装 Type-C 数据线</h6>
+
+                <p>PTC 过温保护、凹形设计、TPE 环保材质</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>39.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/充电头.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Smartisan 双口 & 快充车载充电器</h6>
+
+                <p>铝合金机身、双口 & 快充、智能调节</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/钢化膜.jpg" alt=""/>
+
+            <div class="text">
+                <h6>坚果 Pro 钢化玻璃手感膜“足迹系列”任天堂红白机</h6>
+
+                <p>进口钢化玻璃材质、提供高强度保护</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/自拍杆.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Smartisan 坚果自拍杆</h6>
+
+                <p>航空铝合金伸缩杆、防过敏硅胶手柄</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>69.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/充电头.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Smartisan 原装快充充电器 18W</h6>
+
+                <p>18W 安全快充、支持主流 QC3.0, MTK PE+2.0 快充协议</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>59.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+    </ul>
+</div>
+
+<!--品牌精选开始-->
+<div class="hotPro banxin jingxuan">
+    <div class="title-header">
+        <h5>品牌精选</h5>
+    </div>
+    <ul class="box-img">
+        <div class="fl shoujiPic"><img src="images/耳机01.jpg" alt=""/></div>
+        <li>
+            <img src="images/书02.jpg" alt=""/>
+
+            <div class="text">
+                <h6>《深泽直人》</h6>
+
+                <p>首次面向中国读者介绍其作品</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>49.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/书03.jpg" alt=""/>
+
+            <div class="text">
+                <h6>《日本制造》</h6>
+
+                <p>盛田昭夫的日式经营学</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>39.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/耳机04.jpg" alt=""/>
+
+            <div class="text">
+                <h6>魔声&阿迪达斯 头戴式运动耳机</h6>
+
+                <p>磨砂质感外壳、线控通话、便携可折叠</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/耳机05.jpg" alt=""/>
+
+            <div class="text">
+                <h6>JBL V700NX 无线头戴式耳机</h6>
+
+                <p>40mm 驱动单元、人体工学隔音耳罩</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>99.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/耳机06.jpg" alt=""/>
+
+            <div class="text">
+                <h6>Sennheiser Urbanite XL 头戴线控耳机</h6>
+
+                <p>专业音频技术、优质不锈钢组件、简单便携可折叠</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>69.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li>
+            <img src="images/耳机07.jpg" alt=""/>
+
+            <div class="text">
+                <h6>FIIL Diva 智能蓝牙无线降噪耳机</h6>
+
+                <p>手势触控、智能启停</p>
+            </div>
+            <div class="price">
+                <i>¥</i>
+                <span>59.00</span>
+            </div>
+            <div class="operator">
+                    <span class="seaMes">
+                        <a href="#">查看详情</a>
+                    </span>
+                <span class="addCar">加入购物车</span>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+    </ul>
+</div>
+<!-- 品牌精选开始 -->
+
+<!-- 动态开始 -->
+<div class="dongTai banxin">
+    <div class="title-header">
+        <h5 class="dongT">锤子科技动态</h5>
+    </div>
+    <ul class="box-img">
+        <li><img src="images/f1.png" alt=""/><a href="#" class="shadow"></a></li>
+        <li><img src="images/f2.jpg" alt=""/><a href="#" class="shadow"></a></li>
+        <li><img src="images/f3.jpg" alt=""/><a href="#" class="shadow"></a></li>
+        <li><img src="images/f4.jpg" alt=""/><a href="#" class="shadow"></a></li>
+    </ul>
+</div>
+<!-- 动态结束 -->
+<!--锤子应用开始-->
+<div id="yingyong" class="box banxin">
+    <div class="yy-title-header">
+        <h5>锤子应用</h5>
+        <div><a href="">全部应用<i></i></a></div>
+    </div>
+    <ul id="yyul">
+        <li class="app">
+            <div id="bg11" class="app-image"></div>
+            <div id="bg12">
+                <p class="one">HandShaker</p>
+                <p class="two">在mac和window电脑上也可以方便自如地<br>管理你在Android手机中的内容</p>
+            </div>
+            <div class="downloadpart">
+                <a class="win" href="www.baidu.com">下载win版安装文件</a>
+                <a  class="mac" href="www.baidu.com">下载mac版安装文件</a>
+                <a class="detail" href="">进一步了解HandShaker</a>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li class="app">
+            <div class="app-image note"></div>
+            <div>
+                <p class="one">锤子便签</p>
+                <p class="two">雅致的信纸、精心调整的文字排版<br>这可能是最让人想写的便签应用</p>
+            </div>
+            <div class="ewmpage">
+                <img src="images/ew.jpg" alt=""/>
+                <p>扫二维码下载锤子便签</p>
+                <a href="">进一步了解锤子标签</a>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li class="app">
+            <div class="app-image zhuomian"></div>
+            <div>
+                <p class="one">锤子桌面</p>
+                <p class="two">它示范了何为"美观、易用和人性化"</p>
+            </div>
+            <div class="ewmpage">
+                <img src="images/ew.jpg" alt=""/>
+                <p>扫二维码下载锤子桌面</p>
+                <a href="">进一步了解锤子桌面</a>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+        <li class="app ">
+            <div class="app-image luntan"></div>
+            <div>
+                <p class="one">锤子科技论坛</p>
+                <p class="two">是一个科技论坛<br>不止是科技论坛</p>
+            </div>
+            <div class="ewmpage">
+                <img src="images/ew.jpg" alt=""/>
+                <p>扫二维码下载锤子科技论坛</p>
+                <a href="">进一步了解锤子科技论坛</a>
+            </div>
+            <a href="#" class="shadow"></a>
+        </li>
+
+    </ul>
+</div>
+<!-- //js部分 -->
+<script src="js/jquery-2.2.2.js"></script>
+<script>
+    $('#yyul li').hover(function(){
+            $(this).children().eq(0).stop().fadeOut();
+            $(this).children().eq(1).stop().fadeOut();
+            $(this).children().eq(2).stop().fadeIn();
+        },function(){
+            $(this).children().eq(0).stop().fadeIn();
+            $(this).children().eq(1).stop().fadeIn();
+            $(this).children().eq(2).stop().fadeOut();
+            })
+</script>
+<!--锤子应用结束-->
+<!--论坛精选开始-->
+<div class="jingXuan banxin">
+    <div class="title-header">
+        <h5 class="jingX">论坛精选</h5>
+    </div>
+    <div class="more">
+        <a href="#">
+            前往论坛
+            <span class="qianW">></span>
+        </a>
+    </div>
+    <ul class="jingXuan-img">
+        <li><a href="#" class="shadow"></a>
+            <img src="images/j1.jpg" alt=""/>
+            <div class="jieShao">
+                <h6>"人造人罗永浩"为您介绍</h6>
+                <p>超高效的手机桌面，加上大幅提升工作效率的 One Step (一步) 和 Big Bang (大爆炸)功能,还有精美的UI设计，只需3分28秒即可了解。 </p>
+            </div>
+        </li>
+        <li><a href="#" class="shadow"></a>
+            <img src="images/j2.jpg" alt=""/>
+            <div class="jieShao">
+                <h6>锤科最有出息的孩子-M1评测</h6>
+                <p>M1 到底好不好用？手感如何？续航怎么样？这一篇锤友的使用评测将解答你所有关于 Smartisan M1 的疑问。 </p>
+            </div>
+        </li>
+        <li><a href="#" class="shadow"></a>
+            <img src="images/j3.jpg" alt=""/>
+            <div class="jieShao">
+                <h6>细节之美 Smartisan M1L 咖啡金皮革版 [图赏]</h6>
+                <p>看着几张图，也许会不自觉的屏住呼吸。</p>
+            </div>
+        </li>
+        <li><a href="#" class="shadow"></a>
+            <img src="images/j4.jpg" alt=""/>
+            <div class="jieShao">
+                <h6>【今日话题】来论坛和锤友一起聊聊</h6>
+                <p>没事来论坛和一群趣味相投的锤友，坐下来打开脑洞，一起天马行空的聊聊。话题每周更新 2 - 3 次。 </p>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--论坛精选结束-->
+
+<!-- footer 开始-->
+<div class="footer">
+    <div class="container clearfix">
+        <div class="siteinfo">
+            <ul class="nav-footer clearfix">
+                <li>
+                    <h3>订单服务</h3>
+                    <ul>
+                        <li><a href="#">购买指南</a></li>
+                        <li><a href="#">支付方式</a></li>
+                        <li><a href="#">送货政策</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>服务支持</h3>
+                    <ul>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">维修门店</a></li>
+                        <li><a href="#">零售门店</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>自助服务</h3>
+                    <ul>
+                        <li><a href="#">热点咨询</a></li>
+                        <li><a href="#">预约购买</a></li>
+                        <li><a href="#">订单物流</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>媒体中心</h3>
+                    <ul>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">官方视频</a></li>
+                        <li><a href="#">图片资源</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>关于公司</h3>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>关注我们</h3>
+                    <ul>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方微信</a></li>
+                        <li><a href="#">官方贴吧</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="service">
+                <li class="tel"><a href="#">400-619-0909</a></li>
+                <li class="time">周一至周日 9:00-18:00 （仅收市话费）</li>
+                <li class="online">
+                    <a href="#"><span>?</span>"在线帮助"</a>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <h4>Copyright © 2017, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司</h4>
+            <ul class="privacy">
+                <li>法律声明</li>
+                <li>隐私条款</li>
+                <li>开发者中心</li>
+            </ul>
+            <h6><a href="#">
+                <span>京ICP备14041720号-1</span>
+                <span>京ICP证140622号</span>
+                <span>京公网安备11010502025474</span>
+            </a></h6>
+        </div>
+    </div>
+</div>
+<!-- footer 结束-->
+
+<!-- 回到顶部开始 -->
+<div class="toUp">
+    <img src="images/toUp.png" alt=""/>
+</div>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            if($(this).scrollTop() > $(".newPro").offset().top){
+                $(".toUp").stop().animate({
+                    "bottom": "40px"
+                }, 200);
+            }else{
+                $(".toUp").stop().animate({
+                    "bottom": "-60px"
+                }, 200);
+            }
+        });
+
+        $(".toUp").hover(function () {
+            $(this).stop().fadeTo(200, 1);
+        }, function () {
+            $(this).stop().fadeTo(200, 0.5);
+        }).on("click", function () {
+//            var target = 0;
+//            var timer = setInterval(function(){
+//                var leader = $(window).scrollTop();
+//                var step = Math.ceil(leader/10);
+//                leader = leader - step;
+//                $(window).scrollTop(leader);
+//                if(target == leader){
+//                    clearInterval(timer);
+//                }
+//            }, 10);
+            $("html, body").animate({scrollTop:0}, 300)
+        });
+
+    })
+</script>
+<!-- 回到顶部结束 -->
+</body>
+</html>

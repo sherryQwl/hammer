@@ -1,0 +1,14 @@
+
+注册登入
+
+https://account.smartisan.com/#/v2/login?return_url=http:%2F%2Fstore.smartisan.com%2Faccount%2F
+
+首页
+
+http://www.smartisan.com/#/shop
+
+商品介绍页面
+
+http://www.smartisan.com/jianguopro/#/design
+
+http://www.smartisan.com/jianguopro/#/gallery
